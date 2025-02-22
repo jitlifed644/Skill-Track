@@ -1,7 +1,19 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <SPI.h>  
+#include <LiquidCrystal.h>
+#include <MFRC522>
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
 #include <sqlite3.h>
 #include <SPIFFS.h>
+
+#define RS  23
+#define E   22
+#define D4  21
+#define D5  19
+#define D6  18
+#define D7  5
 
 const char *SSID = "ZFlip5 de Hugo";
 const char *PASSWORD = "aquihaywifi";
