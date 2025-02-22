@@ -1,47 +1,23 @@
+#include <Arduino.h>
 #include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <SPI.h>  
+#include <LiquidCrystal.h>
+#include <MFRC522>
 
-#define SCREEN_WIDTH 128  //screen width
-#define SCREEN_HEIGHT 64  //screen height
-#define OLED_RESET    -1  // Reset 
-#define SCREEN_ADDRESS 0x3C  //I2C direction
+#define RS  23
+#define E   22
+#define D4  21
+#define D5  19
+#define D6  18
+#define D7  5
 
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
 
 void setup() {
-  int button1_pin = 13;
-    Wire.begin(21, 22); // SDA=GPIO21, SCL=GPIO22
-    Serial.begin(115200);
-    int pagina = 0;
-
-    if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-        Serial.println(F("Error al inicializar la pantalla OLED"));
-        for (;;);
-    }
-
-    display.clearDisplay();
-    display.setTextSize(.5);
-    display.setTextColor(WHITE);
-    display.setCursor(0, 10);
-    display.println("Hola, ESP32!");
-    display.println("Hola, ESP32!");
-    if (pagina == 0){
-      display.clearDisplay();
-      display.setTextSize(1.7);
-      display.setTextColor(WHITE);
-      display.setCursor(0, 10);
-      display.println();
-      display.println("SKILL TRACKER");
-    }
-
-
-    
-    display.display(); // Mostrar en pantalla
+    lcd.begin(16, 2);  
+    lcd.print("furrula");
 }
 
 void loop() {
- 
-    
-  
 }
