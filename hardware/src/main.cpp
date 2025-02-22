@@ -9,6 +9,13 @@ const char *PASSWORD = "aquihaywifi";
 sqlite3 *db;
 const char *dbPath = "/data/people.db";
 
+void insertarReto(int usuario_id, int reto_id, const char* estado);
+void instertar_persona(const char *full_name, const char *email, const char *department, int rank);
+void insertar_skill(const char *skill);
+void get_user_skills(const char *full_name);
+void get_users_by_skill(const char *skill_name);
+
+
 void setup(){
     Serial.begin(115200);
 
@@ -93,9 +100,9 @@ void instertar_persona(const char *full_name, const char *email, const char *dep
     }
 }
 
-void insertar_skill(const char *skill, int experince){
+void insertar_skill(const char *skill){
     char sql[128];
-    sprintf(sql, "INSERT INTO skill (skill, expirience) VALUES ('%s', %d);", skill, experince);
+    sprintf(sql, "INSERT INTO skill (skill) VALUES ('%s');", skill);
     char* errMsg;
     if (sqlite3_exec(db, sql, 0, 0, &errMsg) != SQLITE_OK){
         Serial.print("Error al insertar datos: ");
