@@ -26,4 +26,6 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
+    <string name="title_activity_main_selection">main_selection</string>
+    <string name="title_activity_selection">selection</string>
 </resources>

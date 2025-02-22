@@ -13,6 +13,27 @@
         android:theme="@style/Theme.Skill_Track_App"
         tools:targetApi="31">
         <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main_perfil"
+            android:exported="false" />
+        <activity
+            android:name=".SelectionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_selection"
+            android:theme="@style/Theme.Skill_Track_App.NoActionBar" />
+        <activity
+            android:name=".selection"
+            android:exported="false"
+            android:label="@string/title_activity_selection"
+            android:theme="@style/Theme.Skill_Track_App.NoActionBar" />
+        <activity
+            android:name=".main_selection"
+            android:exported="false"
+            android:label="@string/title_activity_main_selection"
+            android:theme="@style/Theme.Skill_Track_App.NoActionBar" />
+        <activity
             android:name=".MainActivityPerfil"
             android:exported="false"
             android:label="@string/title_activity_main_perfil"
